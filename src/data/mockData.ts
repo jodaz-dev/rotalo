@@ -47,7 +47,7 @@ export const events: Event[] = [
     name: "IRONMAN 70.3 Cartagena 2025",
     date: "2025-12-01",
     coverImage: "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&h=500&fit=crop",
-    description: "Triathlon event in the beautiful city of Cartagena. Find yourself in the album and purchase your photos easily.",
+    description: "Evento de triatlón en la hermosa ciudad de Cartagena. Encuéntrate en el álbum y compra tus fotos fácilmente.",
     photographers: ["mag", "sportshot"],
   },
   {
@@ -55,7 +55,7 @@ export const events: Event[] = [
     name: "Sunday Music Run 2025",
     date: "2025-11-30",
     coverImage: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&h=500&fit=crop",
-    description: "A fun run with live music at every kilometer. Celebrate fitness and music together!",
+    description: "Una carrera divertida con música en vivo en cada kilómetro. ¡Celebra el fitness y la música juntos!",
     photographers: ["richard", "mag"],
   },
   {
@@ -63,7 +63,7 @@ export const events: Event[] = [
     name: "Maratón de Bogotá 2025",
     date: "2025-11-15",
     coverImage: "https://images.unsplash.com/photo-1513593771513-7b58b6c4af38?w=800&h=500&fit=crop",
-    description: "Annual marathon through the streets of Bogotá. Over 40,000 participants!",
+    description: "Maratón anual por las calles de Bogotá. ¡Más de 40,000 participantes!",
     photographers: ["sportshot", "richard"],
   },
   {
@@ -71,7 +71,7 @@ export const events: Event[] = [
     name: "Triatlón Santa Marta 2025",
     date: "2025-10-20",
     coverImage: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&h=500&fit=crop",
-    description: "Ocean swim, coastal bike ride, and beach run in beautiful Santa Marta.",
+    description: "Natación en el océano, ciclismo costero y carrera en la playa en la hermosa Santa Marta.",
     photographers: ["mag"],
   },
 ];

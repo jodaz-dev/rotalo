@@ -24,7 +24,7 @@ export const PhotographerFilter = ({
             : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
         )}
       >
-        All Photos
+        Todas las fotos
       </button>
       {photographers.map((photographer) => (
         <button

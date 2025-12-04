@@ -9,7 +9,7 @@ export const PhotoGrid = ({ photos, onPhotoClick }: PhotoGridProps) => {
   if (photos.length === 0) {
     return (
       <div className="py-12 text-center">
-        <p className="text-muted-foreground">No photos found</p>
+        <p className="text-muted-foreground">No se encontraron fotos</p>
       </div>
     );
   }
@@ -27,7 +27,7 @@ export const PhotoGrid = ({ photos, onPhotoClick }: PhotoGridProps) => {
         >
           <img
             src={photo.thumbnail}
-            alt={`Photo ${photo.id}`}
+            alt={`Foto ${photo.id}`}
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             loading="lazy"
           />

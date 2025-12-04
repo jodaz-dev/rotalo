@@ -61,18 +61,18 @@ const EventDetail = () => {
       <div className="min-h-screen bg-background">
         <Header />
         <main className="container py-16 text-center">
-          <h1 className="mb-4 text-2xl font-bold text-foreground">Event Not Found</h1>
+          <h1 className="mb-4 text-2xl font-bold text-foreground">Evento no encontrado</h1>
           <p className="mb-6 text-muted-foreground">
-            The event you're looking for doesn't exist.
+            El evento que buscas no existe.
           </p>
-          <Button onClick={() => navigate("/")}>Back to Events</Button>
+          <Button onClick={() => navigate("/")}>Volver a eventos</Button>
         </main>
       </div>
     );
   }
 
   const mainPhotographer = getPhotographerById(event.photographers[0]);
-  const formattedDate = new Date(event.date).toLocaleDateString("en-US", {
+  const formattedDate = new Date(event.date).toLocaleDateString("es-ES", {
     day: "2-digit",
     month: "short",
     year: "numeric",
@@ -96,7 +96,7 @@ const EventDetail = () => {
           <SearchBox
             value={searchQuery}
             onChange={setSearchQuery}
-            placeholder="Search photos..."
+            placeholder="Buscar fotos..."
             className="flex-1"
           />
           <Button variant="ghost" size="icon" className="shrink-0">
@@ -155,7 +155,7 @@ const EventDetail = () => {
         <section className="animate-fade-up" style={{ animationDelay: "200ms" }}>
           <div className="mb-4 flex items-center justify-between">
             <span className="text-sm text-muted-foreground">
-              {filteredPhotos.length} photo{filteredPhotos.length !== 1 ? "s" : ""}
+              {filteredPhotos.length} foto{filteredPhotos.length !== 1 ? "s" : ""}
             </span>
           </div>
           <PhotoGrid photos={filteredPhotos} onPhotoClick={handlePhotoClick} />
