@@ -51,7 +51,7 @@ export const PaymentModal = ({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <CreditCard className="h-5 w-5 text-primary" />
-            Payment Details
+            Detalles de pago
           </DialogTitle>
         </DialogHeader>
 
@@ -59,11 +59,11 @@ export const PaymentModal = ({
           {/* Order Summary */}
           <div className="rounded-lg bg-muted/50 p-4 space-y-2">
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Photos</span>
+              <span className="text-muted-foreground">Fotos</span>
               <span className="font-medium">{totalPhotos}</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Payment Method</span>
+              <span className="text-muted-foreground">Método de pago</span>
               <span className="font-medium">{paymentMethod}</span>
             </div>
             <div className="border-t border-border pt-2 mt-2">
@@ -76,10 +76,10 @@ export const PaymentModal = ({
 
           {/* Reference Input */}
           <div className="space-y-2">
-            <Label htmlFor="reference">Payment Reference *</Label>
+            <Label htmlFor="reference">Referencia de pago *</Label>
             <Input
               id="reference"
-              placeholder="Enter your payment reference number"
+              placeholder="Ingresa tu número de referencia"
               value={reference}
               onChange={(e) => setReference(e.target.value)}
               required
@@ -88,7 +88,7 @@ export const PaymentModal = ({
 
           {/* Proof of Purchase */}
           <div className="space-y-2">
-            <Label htmlFor="proof">Proof of Purchase (optional)</Label>
+            <Label htmlFor="proof">Comprobante de pago (opcional)</Label>
             <div className="relative">
               <Input
                 id="proof"
@@ -104,7 +104,7 @@ export const PaymentModal = ({
                 onClick={() => document.getElementById("proof")?.click()}
               >
                 <Upload className="h-4 w-4 mr-2" />
-                {proofFile ? proofFile.name : "Attach image (PNG, JPEG)"}
+                {proofFile ? proofFile.name : "Adjuntar imagen (PNG, JPEG)"}
               </Button>
             </div>
           </div>
@@ -117,14 +117,14 @@ export const PaymentModal = ({
               className="flex-1"
               onClick={onClose}
             >
-              Cancel
+              Cancelar
             </Button>
             <Button
               type="submit"
               className="flex-1"
               disabled={!reference.trim() || isSubmitting}
             >
-              {isSubmitting ? "Processing..." : "Complete Order"}
+              {isSubmitting ? "Procesando..." : "Completar pedido"}
             </Button>
           </div>
         </form>

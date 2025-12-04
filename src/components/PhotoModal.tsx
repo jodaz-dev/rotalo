@@ -79,12 +79,12 @@ export const PhotoModal = ({
               {isInCart ? (
                 <>
                   <Check className="h-4 w-4 mr-1" />
-                  Added
+                  Agregado
                 </>
               ) : (
                 <>
                   <ShoppingCart className="h-4 w-4 mr-1" />
-                  Add to Cart
+                  Agregar al carrito
                 </>
               )}
             </Button>
@@ -126,7 +126,7 @@ export const PhotoModal = ({
           {/* Main Image */}
           <img
             src={photo.url}
-            alt={`Photo by ${photographer?.name || "Unknown"}`}
+            alt={`Foto por ${photographer?.name || "Desconocido"}`}
             className="max-h-full max-w-full object-contain animate-fade-in"
           />
         </div>

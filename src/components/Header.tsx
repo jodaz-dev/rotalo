@@ -23,13 +23,13 @@ export const Header = () => {
             to="/"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Events
+            Eventos
           </Link>
           <Link
             to="/"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Photographers
+            Fotógrafos
           </Link>
           <Link to="/cart" className="relative">
             <Button variant="ghost" size="icon" className="text-muted-foreground">
@@ -59,25 +59,25 @@ export const Header = () => {
                 to="/"
                 className="text-lg font-medium text-foreground transition-colors hover:text-primary"
               >
-                Events
+                Eventos
               </Link>
               <Link
                 to="/"
                 className="text-lg font-medium text-foreground transition-colors hover:text-primary"
               >
-                Photographers
+                Fotógrafos
               </Link>
               <Link
                 to="/cart"
                 className="text-lg font-medium text-foreground transition-colors hover:text-primary"
               >
-                Cart {totalItems > 0 && `(${totalItems})`}
+                Carrito {totalItems > 0 && `(${totalItems})`}
               </Link>
               <Link
                 to="/"
                 className="text-lg font-medium text-foreground transition-colors hover:text-primary"
               >
-                Account
+                Cuenta
               </Link>
             </nav>
           </SheetContent>
