@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Upload, CreditCard } from "lucide-react";
+import { Upload, CreditCard } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -36,7 +36,7 @@ export const PaymentModal = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!reference.trim()) return;
-    
+
     setIsSubmitting(true);
     // Simulate processing
     setTimeout(() => {
