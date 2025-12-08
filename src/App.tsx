@@ -7,6 +7,7 @@ import { CartProvider } from "@/contexts/CartContext";
 import Index from "./pages/Index";
 import EventDetail from "./pages/EventDetail";
 import Cart from "./pages/Cart";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/event/:eventId" element={<EventDetail />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/auth" element={<Auth />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
