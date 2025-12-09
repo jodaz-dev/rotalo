@@ -7,6 +7,7 @@ import { SignInForm } from "@/components/auth/SignInForm";
 import { RecoveryForm } from "@/components/auth/RecoveryForm";
 import { VerificationPending } from "@/components/auth/VerificationPending";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
 import type { SignUpFormData, SignInFormData } from "@/lib/validations/auth";
 
 type AuthView = "auth" | "recovery" | "verification";
@@ -14,6 +15,7 @@ type AuthView = "auth" | "recovery" | "verification";
 export default function Auth() {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { login } = useAuth();
   const [view, setView] = useState<AuthView>("auth");
   const [activeTab, setActiveTab] = useState("signin");
   const [pendingVerification, setPendingVerification] = useState<{
@@ -36,6 +38,13 @@ export default function Auth() {
 
   const handleSignIn = (data: SignInFormData) => {
     console.log("Sign in data:", data);
+    // Mock user data - in real app, this would come from API
+    const user = {
+      id: "1",
+      email: data.identifier,
+      name: data.identifier.split("@")[0], // Simple mock name
+    };
+    login(user);
     toast({
       title: "Bienvenido",
       description: "Has iniciado sesión exitosamente.",

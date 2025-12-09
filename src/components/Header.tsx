@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Camera, Menu, User, ShoppingCart } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
+import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Header = () => {
   const { totalItems } = useCart();
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-card/80 backdrop-blur-md">
@@ -19,7 +22,7 @@ export const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 md:flex">
-          <Link
+          {/* <Link
             to="/"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
@@ -30,7 +33,7 @@ export const Header = () => {
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Fotógrafos
-          </Link>
+          </Link> */}
           <Link to="/cart" className="relative">
             <Button variant="ghost" size="icon" className="text-muted-foreground">
               <ShoppingCart className="h-5 w-5" />
@@ -41,7 +44,12 @@ export const Header = () => {
               )}
             </Button>
           </Link>
-          <Button variant="ghost" size="icon" className="text-muted-foreground">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-muted-foreground"
+            onClick={() => navigate(isAuthenticated ? "/profile" : "/auth")}
+          >
             <User className="h-5 w-5" />
           </Button>
         </nav>
