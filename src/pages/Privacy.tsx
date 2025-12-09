@@ -35,7 +35,7 @@ const Privacy = () => {
             <p className="mb-1">
               Utilizamos tu información para:
             </p>
-            <ul>
+            <ul className="list-disc list-inside space-y-1 mb-4">
               <li>Procesar tus compras de contenido.</li>
               <li>Proporcionarte una experiencia personalizada en la app.</li>
               <li>Mejorar nuestros servicios y realizar análisis internos.</li>
@@ -51,7 +51,7 @@ const Privacy = () => {
             <p className="mb-1">
               Nunca compartimos tu información personal con terceros, excepto:
             </p>
-            <ul>
+            <ul className="list-disc list-inside space-y-1 mb-4">
               <li>Proveedores de servicios esenciales (como procesadores de pago) o con los fotógrafos a los que les compras contenido.</li>
               <li>Cumplimiento de obligaciones legales o regulatorias.</li>
             </ul>
@@ -65,7 +65,7 @@ const Privacy = () => {
             <p className="mb-1">
               Tienes derecho a:
             </p>
-            <ul>
+            <ul className="list-disc list-inside space-y-1 mb-4">
               <li>Acceder, corregir o eliminar tu información personal almacenada en la app.</li>
               <li>Solicitar la eliminación del contenido dónde apareces si esto infringe tus derechos de privacidad, conforme a las leyes aplicables.</li>
             </ul>
