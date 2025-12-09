@@ -1,8 +1,16 @@
+export interface PaymentDetails {
+  bank: string;
+  rif: string;
+  phone: string;
+  accountHolder: string;
+}
+
 export interface Photographer {
   id: string;
   name: string;
   logo: string;
   website?: string;
+  paymentDetails: PaymentDetails;
 }
 
 export interface Photo {
@@ -28,16 +36,34 @@ export const photographers: Photographer[] = [
     name: "MAG Fotografía",
     logo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
     website: "magfotografia.ve",
+    paymentDetails: {
+      bank: "Banco Nacional de Crédito",
+      rif: "J-298783206",
+      phone: "0424-281-0062",
+      accountHolder: "MAG Fotografía C.A.",
+    },
   },
   {
     id: "richard",
     name: "Richard Bermúdez",
     logo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    paymentDetails: {
+      bank: "Banco Mercantil",
+      rif: "V-15234567",
+      phone: "0412-555-1234",
+      accountHolder: "Richard Bermúdez",
+    },
   },
   {
     id: "sportshot",
     name: "SportShot Pro",
     logo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+    paymentDetails: {
+      bank: "Banesco",
+      rif: "J-412345678",
+      phone: "0414-123-4567",
+      accountHolder: "SportShot Pro C.A.",
+    },
   },
 ];
 

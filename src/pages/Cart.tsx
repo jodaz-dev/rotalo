@@ -221,9 +221,8 @@ const Cart = () => {
         isOpen={isPaymentOpen}
         onClose={() => setIsPaymentOpen(false)}
         onComplete={handlePaymentComplete}
-        totalPhotos={items.length}
+        cartItems={items}
         totalAmount={totalAmount}
-        paymentMethod="Transferencia bancaria / Pago móvil"
       />
     </div>
   );
