@@ -9,7 +9,7 @@ interface EventCardProps {
 
 export const EventCard = ({ event }: EventCardProps) => {
   const mainPhotographer = getPhotographerById(event.photographers[0]);
-  const formattedDate = new Date(event.date).toLocaleDateString("en-US", {
+  const formattedDate = new Date(event.date).toLocaleDateString("es-ES", {
     day: "2-digit",
     month: "short",
     year: "numeric",

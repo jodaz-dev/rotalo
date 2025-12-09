@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Header } from "@/components/Header";
 import { SearchBox } from "@/components/SearchBox";
 import { EventCard } from "@/components/EventCard";
+import { Footer } from "@/components/Footer";
 import { events } from "@/data/mockData";
 
 const Index = () => {
@@ -23,15 +24,15 @@ const Index = () => {
         {/* Hero Section */}
         <section className="mb-8 md:mb-12">
           <h1 className="mb-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Find Your Event Photos
+            Encuentra tus fotos del evento
           </h1>
           <p className="mb-6 text-muted-foreground md:text-lg">
-            Browse photos from sports events captured by professional photographers
+            Explora fotos de eventos deportivos capturadas por fotógrafos profesionales
           </p>
           <SearchBox
             value={searchQuery}
             onChange={setSearchQuery}
-            placeholder="Search events..."
+            placeholder="Buscar eventos..."
             className="max-w-xl"
           />
         </section>
@@ -40,10 +41,10 @@ const Index = () => {
         <section>
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-semibold text-foreground">
-              {searchQuery ? "Search Results" : "Recent Events"}
+              {searchQuery ? "Resultados de búsqueda" : "Eventos recientes"}
             </h2>
             <span className="text-sm text-muted-foreground">
-              {filteredEvents.length} event{filteredEvents.length !== 1 ? "s" : ""}
+              {filteredEvents.length} evento{filteredEvents.length !== 1 ? "s" : ""}
             </span>
           </div>
 
@@ -61,24 +62,19 @@ const Index = () => {
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border bg-card/50 py-16">
-              <p className="text-muted-foreground">No events found matching "{searchQuery}"</p>
+              <p className="text-muted-foreground">No se encontraron eventos para "{searchQuery}"</p>
               <button
                 onClick={() => setSearchQuery("")}
                 className="mt-2 text-sm font-medium text-primary hover:underline"
               >
-                Clear search
+                Limpiar búsqueda
               </button>
             </div>
           )}
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-card/50 py-6">
-        <div className="container text-center text-sm text-muted-foreground">
-          <p>© 2025 EventShot. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

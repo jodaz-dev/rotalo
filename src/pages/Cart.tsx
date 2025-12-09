@@ -57,11 +57,11 @@ const Cart = () => {
         <Header />
         <main className="container py-16 text-center">
           <ShoppingBag className="mx-auto h-16 w-16 text-muted-foreground/50 mb-4" />
-          <h1 className="mb-2 text-2xl font-bold text-foreground">Your cart is empty</h1>
+          <h1 className="mb-2 text-2xl font-bold text-foreground">Tu carrito está vacío</h1>
           <p className="mb-6 text-muted-foreground">
-            Browse events and add photos to your cart.
+            Explora eventos y agrega fotos a tu carrito.
           </p>
-          <Button onClick={() => navigate("/")}>Browse Events</Button>
+          <Button onClick={() => navigate("/")}>Explorar eventos</Button>
         </main>
       </div>
     );
@@ -82,7 +82,7 @@ const Cart = () => {
           >
             <ArrowLeft className="h-5 w-5" />
           </Button>
-          <h1 className="text-lg font-semibold">Shopping Cart</h1>
+          <h1 className="text-lg font-semibold">Carrito de compras</h1>
         </div>
       </div>
 
@@ -91,9 +91,9 @@ const Cart = () => {
         {isOrderComplete && (
           <Alert className="mb-6 border-primary/50 bg-primary/10">
             <CheckCircle className="h-5 w-5 text-primary" />
-            <AlertTitle className="text-primary">Order Submitted!</AlertTitle>
+            <AlertTitle className="text-primary">¡Pedido enviado!</AlertTitle>
             <AlertDescription>
-              You will receive your photographs on your email once the photographer approves your petition.
+              Recibirás tus fotografías en tu correo electrónico una vez que el fotógrafo apruebe tu solicitud.
             </AlertDescription>
           </Alert>
         )}
@@ -102,7 +102,7 @@ const Cart = () => {
           <div className="grid gap-8 lg:grid-cols-2">
             {/* Left Column - Photos & Payment Info */}
             <div className="space-y-6">
-              <h2 className="text-lg font-semibold">Selected Photos</h2>
+              <h2 className="text-lg font-semibold">Fotos seleccionadas</h2>
               
               {Object.entries(photosByPhotographer).map(([photographerId, photos]) => {
                 const photographer = getPhotographerById(photographerId);
@@ -120,7 +120,7 @@ const Cart = () => {
                           <div>
                             <p className="font-medium">{photographer.name}</p>
                             <p className="text-xs text-muted-foreground">
-                              Payment: Bank Transfer / Mobile Pay
+                              Pago: Transferencia bancaria / Pago móvil
                             </p>
                           </div>
                         </>
@@ -133,7 +133,7 @@ const Cart = () => {
                         <div key={photo.id} className="group relative aspect-square">
                           <img
                             src={photo.thumbnail}
-                            alt="Selected photo"
+                            alt="Foto seleccionada"
                             className="h-full w-full rounded-md object-cover"
                           />
                           <button
@@ -154,22 +154,22 @@ const Cart = () => {
 
               {/* Total */}
               <div className="flex justify-between items-center rounded-lg bg-muted/50 p-4">
-                <span className="font-medium">Total ({items.length} photos)</span>
+                <span className="font-medium">Total ({items.length} fotos)</span>
                 <span className="text-xl font-bold text-primary">${totalAmount.toFixed(2)}</span>
               </div>
             </div>
 
             {/* Right Column - Customer Form */}
             <div className="space-y-6">
-              <h2 className="text-lg font-semibold">Your Information</h2>
+              <h2 className="text-lg font-semibold">Tu información</h2>
               
               <div className="rounded-lg border border-border bg-card p-6 space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Full Name *</Label>
+                  <Label htmlFor="name">Nombre completo *</Label>
                   <Input
                     id="name"
                     name="name"
-                    placeholder="Enter your full name"
+                    placeholder="Ingresa tu nombre completo"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
@@ -177,12 +177,12 @@ const Cart = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email Address *</Label>
+                  <Label htmlFor="email">Correo electrónico *</Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="Enter your email"
+                    placeholder="Ingresa tu correo"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
@@ -190,12 +190,12 @@ const Cart = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number *</Label>
+                  <Label htmlFor="phone">Número de teléfono *</Label>
                   <Input
                     id="phone"
                     name="phone"
                     type="tel"
-                    placeholder="Enter your phone number"
+                    placeholder="Ingresa tu número de teléfono"
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
@@ -208,7 +208,7 @@ const Cart = () => {
                   disabled={!isFormValid}
                   onClick={handleProceedToPayment}
                 >
-                  Proceed to Payment
+                  Proceder al pago
                 </Button>
               </div>
             </div>
@@ -221,9 +221,8 @@ const Cart = () => {
         isOpen={isPaymentOpen}
         onClose={() => setIsPaymentOpen(false)}
         onComplete={handlePaymentComplete}
-        totalPhotos={items.length}
+        cartItems={items}
         totalAmount={totalAmount}
-        paymentMethod="Bank Transfer / Mobile Pay"
       />
     </div>
   );
