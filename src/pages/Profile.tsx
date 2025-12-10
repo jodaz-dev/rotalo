@@ -1,7 +1,9 @@
 import { useAuth } from "@/contexts/AuthContext";
 import { Header } from "@/components/Header";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "sonner";
+import { Camera } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { AccountProfileSection } from "@/components/profile/AccountProfileSection";
 import { EmailSection } from "@/components/profile/EmailSection";
 import { PasswordSection } from "@/components/profile/PasswordSection";
@@ -50,7 +52,16 @@ export default function Profile() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto space-y-6">
           <h1 className="text-2xl font-bold mb-6">Configuración del Perfil</h1>
+
+          {/* Photographer Account Link */}
+          <Link to="/photographer-profile">
+            <Button variant="outline" className="w-full justify-start gap-3 h-14">
+              <Camera className="h-5 w-5" />
+              <span>Crear cuenta como fotógrafo</span>
+            </Button>
+          </Link>
           
+
           <AccountProfileSection 
             user={user} 
             onUpdate={handleProfileUpdate} 
