@@ -15,6 +15,7 @@ import PhotographerOrders from "./pages/PhotographerOrders";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
+import Store from "./pages/Store";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="/cart" element={<Cart />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/store" element={<Store />} />
               <Route path="/photographer-profile" element={<PhotographerProfile />} />
               <Route path="/photographer/orders" element={<PhotographerOrders />} />
               <Route path="/terms" element={<Terms />} />
