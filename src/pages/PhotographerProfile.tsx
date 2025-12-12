@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { ArrowLeft, Upload, Trash2, ClipboardList } from "lucide-react";
+import { ArrowLeft, Upload, Trash2, ClipboardList, Image } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -185,13 +185,22 @@ export default function PhotographerProfile() {
               </h1>
             </div>
             {photographer && (
-              <Button
-                variant="outline"
-                onClick={() => navigate("/photographer/orders")}
-              >
-                <ClipboardList className="mr-2 h-4 w-4" />
-                Ver órdenes
-              </Button>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  onClick={() => navigate("/photographer/albums")}
+                >
+                  <Image className="mr-2 h-4 w-4" />
+                  Álbumes
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => navigate("/photographer/orders")}
+                >
+                  <ClipboardList className="mr-2 h-4 w-4" />
+                  Órdenes
+                </Button>
+              </div>
             )}
           </div>
 
